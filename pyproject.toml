@@ -1,0 +1,20 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ssh-control-mcp"
+version = "1.0.0"
+description = "MCP server for controlling Linux VMs via SSH with safety checks"
+requires-python = ">=3.10"
+dependencies = [
+    "mcp>=0.9.0",
+    "paramiko>=3.4.0",
+    "pyyaml>=6.0.1",
+    "flask>=3.0.0",
+    "flask-cors>=4.0.0",
+]
+
+[project.scripts]
+ssh-control-mcp = "ssh_control_mcp.server:main"
+ssh-control-http = "ssh_control_mcp.http_wrapper:app"
